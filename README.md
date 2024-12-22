@@ -8,12 +8,12 @@ Program akan mendeteksi wajah pengguna apakah sedang fokus atau tidak.
 2. Deteksi mata
 Program akan mendeteksi mata pengguna apakah tertutup atau tidak. Jika tertutup lebih dari 5 detik maka pengguna tidak fokus.
 3. Menampilkan statistik hasil dari tingkat fokus pengguna seperti: 
-- Jumlah kejadian tidak fokus
-- Tingkat fokus pengguna
-- Rata-rata durasi tidak fokus
-- Ringkasan performa fokus pengguna
-- Rekomendasi peningkatan untuk pengguna 
-- Log Waktu tidak fokus
+    - Jumlah kejadian tidak fokus
+    - Tingkat fokus pengguna
+    - Rata-rata durasi tidak fokus
+    - Ringkasan performa fokus pengguna
+    - Rekomendasi peningkatan untuk pengguna 
+    - Log Waktu tidak fokus
 
 Teknologi yang digunakan:
 - Flask: Framework Python untuk aplikasi web
