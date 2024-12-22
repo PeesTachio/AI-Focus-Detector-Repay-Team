@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Detector Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Focus Result</h1>
+        <p>Statistik Kualitas Fokus Pengguna</p>
+    </header>
+    <main>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Tidak Fokus</h3>
+                <div class="stat-value">{{ total }}</div>
+                <p>kejadian</p>
+            </div>
+            <div class="stat-card">
+                <h3>Index Fokus</h3>
+                <div class="stat-value {{ 'excellent' if focus_index > 90 else 'good' if focus_index > 80 else 'medium' if focus_index > 60 else 'poor' }}">
+                    {{ focus_index }}%
+                </div>
+                <div class="focus-status {{ 'status-good' if focus_index >= 80 else 'status-medium' if focus_index >= 60 else 'status-poor' }}">
+                    {{ focus_description }}
+                </div>
+            </div>
+            <div class="stat-card">
+                <h3>Rata-rata Durasi</h3>
+                <div class="stat-value">{{ avg_duration }}</div>
+                <p>detik per kejadian</p>
+            </div>
+        </div>
+
+        <section class="summary-card">
+            <h2>Ringkasan Performa</h2>
+            <div class="performance-details">
+                <div class="detail-item">
+                    <span class="icon">⏰</span>
+                    <p>Waktu Total Monitoring: <strong>{{ total_time }} menit</strong></p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">📊</span>
+                    <p>Tingkat Konsentrasi: <strong>{{ concentration_level }}</strong></p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">🎯</span>
+                    <p>Target Berikutnya: <strong>{{ next_target }}</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendation-card">
+            <h2>Rekomendasi Peningkatan</h2>
+            <div class="recommendations">
+                {% if focus_index < 60 %}
+                <div class="recommendation-item">
+                    <span class="icon">💡</span>
+                    <p>Ambil istirahat pendek setiap 25 menit</p>
+                </div>
+                <div class="recommendation-item">
+                    <span class="icon">🎧</span>
+                    <p>Gunakan musik fokus atau white noise</p>
+                </div>
+                <div class="recommendation-item">
+                    <span class="icon">🪑</span>
+                    <p>Perbaiki postur dan posisi duduk</p>
+                </div>
+                {% elif focus_index < 80 %}
+                <div class="recommendation-item">
+                    <span class="icon">⏰</span>
+                    <p>Tetapkan jadwal fokus yang lebih teratur</p>
+                </div>
+                <div class="recommendation-item">
+                    <span class="icon">📱</span>
+                    <p>Kurangi gangguan dari notifikasi</p>
+                </div>
+                {% else %}
+                <div class="recommendation-item">
+                    <span class="icon">🌟</span>
+                    <p>Pertahankan performa baik Anda!</p>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="log">
+            <h2>Riwayat Tidak Fokus</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Waktu Kejadian</th>
+                        <th>Durasi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in focus_log %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ entry.time }}</td>
+                        <td>{{ entry.duration }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>               
+        <div class="button-result">
+            <a onclick="location.href='/'">Kembali ke Beranda</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Repay Team - Focus Detector AI</p>
+    </footer>
+</body>
+</html>
