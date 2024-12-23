@@ -28,7 +28,7 @@ Program akan mendeteksi mata pengguna apakah tertutup atau tidak. Jika tertutup 
 2. Masuk ke direktori proyek.
 3. cd fokus-deteksi.
 4. Download file dari model shape_predictor_68_face_landmarks.dat dari GitHub.
-5. Kemudian jalankan server Flask dan akses http://127.0.0.1:5000.
+5. Kemudian jalankan server Flask pada app.py dan akses http://127.0.0.1:5000.
 
 # File:
 - app.py logika Utama dari aplikasi.
