@@ -17,7 +17,7 @@ Program akan mendeteksi mata pengguna apakah tertutup atau tidak. Jika tertutup 
     - Rekomendasi peningkatan untuk pengguna.
     - Log Waktu tidak fokus.
 
-# Teknologi yang digunakan:
+# Teknologi:
 - Flask: Framework Python untuk aplikasi web.
 - OpenCV: untuk pengolahan gambar dan video.
 - dlib: Untuk deteksi wajah dan landmark.
