@@ -31,9 +31,10 @@ Program akan mendeteksi mata pengguna apakah tertutup atau tidak. Jika tertutup 
 5. Kemudian jalankan server Flask dan akses http://127.0.0.1:5000.
 
 # File:
-app.py logika Utama dari aplikasi
-templates/index.html: Halaman Utama untuk focus detector
-templates/result.html : halaman untuk statistik hasil deteksi fokus pengguna.
-Javascripts: program javascripts untuk html dan css.
+- app.py logika Utama dari aplikasi
+- templates/index.html: Halaman Utama untuk focus detector
+- templates/result.html : halaman untuk statistik hasil deteksi fokus pengguna.
+- static/style.css : CSS untuk halaman website
+- Javascripts: program javascripts untuk html dan css.
 
 Maaf pak karena filenya berada di branch master, saya tidak mengerti memindahkannya ke branch main.
