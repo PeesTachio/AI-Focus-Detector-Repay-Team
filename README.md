@@ -1,3 +1,5 @@
+File program berada di branch master.
+
 Deskripsi 
 
 Proyek ini merupakan aplikasi berbasis Flask yang menggunakan kamera/webcam sebagai alat untuk mendeteksi tingkat fokus dari penggunanya. Aplikasi ini memanfaatkan dlib untuk mendeteksi wajah dan fitur landmark, serta menghitung durasi pengguna dalam keadaan focus atau tidak berdasarkan Eye Aspect Ratio (EAR).
